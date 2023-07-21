@@ -1,4 +1,4 @@
-from app.models.players import players_table
+from app.models.models import players_table
 from app.db import database
 
 
