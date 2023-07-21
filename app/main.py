@@ -23,10 +23,6 @@ class ScenesValid(BaseModel):
     path_img: str
 
 
-class GetSceneValid(BaseModel):
-    name: str
-
-
 class WindowsValid(BaseModel):
     scene_id: int
     text: str
@@ -75,5 +71,5 @@ async def add_window(window: WindowsValid):
 
 
 @app.get("/scenes/")
-async def scene(name: GetSceneValid):
+async def scene(name: str):
     return await get_scene(name)

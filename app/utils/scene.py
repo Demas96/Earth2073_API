@@ -25,7 +25,6 @@ async def create_window(window):
 async def get_scene(name):
     query = scenes_table.select().where(scenes_table.c.name == name)
     scene = await database.fetch_all(query)
-    query = windows_table.select().where(windows_table.c.scene_id == scene['scene_id'])
+    query = windows_table.select().where(windows_table.c.scene_id == scene[0]['id'])
     windows = await database.fetch_all(query)
-    print(windows)
-    return None
+    return {'scene': scene, 'windows': windows}
