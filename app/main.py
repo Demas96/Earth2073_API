@@ -25,8 +25,10 @@ class ScenesValid(BaseModel):
 
 class WindowsValid(BaseModel):
     scene_id: int
+    serial_number: int
     text: str
     character: str
+    version: str
     path_img: str
 
 

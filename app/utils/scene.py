@@ -14,8 +14,10 @@ async def create_scene(scene):
 async def create_window(window):
     query = windows_table.insert().values(
         scene_id=window.scene_id,
+        serial_number=window.serial_number,
         text=window.text,
         character=window.character,
+        version=window.version,
         path_img=window.path_img
     )
     window_id = await database.execute(query)
